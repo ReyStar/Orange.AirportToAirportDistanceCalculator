@@ -1,4 +1,7 @@
 # Orange.AirportToAirportDistanceCalculator
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ReyStar/Orange.StatsD/blob/master/LICENSE)
+[![Build Status](https://dev.azure.com/starandrey/starandrey/_apis/build/status/ReyStar.Orange..AirportToAirportDistanceCalculator?branchName=master)](https://dev.azure.com/starandrey/starandrey/_build/latest?definitionId=2&branchName=master)
+<br>
 Test project for providing information on distance between airports.
 
 ## Introduction
@@ -14,14 +17,14 @@ The main purpose of the development of this software is to provide functionality
 An IATA airport code, also known as an IATA location identifier, IATA station code, or simply a location identifier, is a **three-letter** geocode designating many airports and metropolitan areas around the world, defined by the International Air Transport Association (IATA). The characters prominently displayed on baggage tags attached at airport check-in desks are an example of a way these codes are used. [link](https://en.wikipedia.org/wiki/IATA_airport_code)
 ###### About performance
 Before starting the development, it should be noted that the geographical coordinates of airports change very rarely and the most optimal in terms of performance is the approach of obtaining pre-calculated data (saved in the program's metadata).
-### Data format
-#### API
+
+### API
 
 |Verb|Resource|Parameters|Status Code|Responce body|Description|
 |----|--------|----------|-----------|-------------|-----------|
 |GET |/api/v1/distances|from - Departure airport IATA code <br> to - Destination airport IATA code |200 - Ok <br> 400 - Bad Request <br> 404 - Not Found |DistanceResponse|Calculate distance between airports|
 
-##### DistanceResponse
+#### DistanceResponse
 ```javascript
 DistanceResponse{
 miles*	number($double)
@@ -42,4 +45,9 @@ To implement the business logic for calculating the distance between airports, w
 #### About database technology type
 To improve performance, I will use the database. This database will be used rather as a cache for serving dynamically calculated data. In this service, between the bases of service instances, there may be no synchronization, because they perform simple math operations and Embedded base can be used. I wanted to use the NOSQL embeddable [LightDB](https://www.litedb.org/). Tests have shown that this is a small and high-performance data base but unfortunately it didn't have asynchronous functions. For the implementation of the data storage, I chose the [SQLite](https://www.sqlite.org/index.html) database, this is an embedded implementation database. In the future, if the requirements for scaling and fault tolerance of the program change, the base can be replaced by another implementation, such as postgresql/mssql.  
 #### Database data
-IATA airport codes is a **three-letter** geocode in uppercase. The Internet database of IATA airport codes contains approximately 10,000 entries. The maximum combinatorial combination of 26 English characters in three positions (Permutations with Repetition) 17576. The database will store a pairwise combination of IATA codes without repeating. If the combination {А, В} is present in the database, it will be impossible to add the combination {В, А}, they are equivalent (Combinations without repetition). The database will contain a maximum of 154449100 or for a base of 10000 codes 49995000 records. Each record will contain two fields of three ASCII characters and one double field = 112 bites = 14 byte. Maximum database size can be ~ 4.027 GB or database size for 10000 IATA codes ~ 0.652 GB (I'm talking about pure data, there are also overhead costs of the database data structs as a cluster index). 
+IATA airport codes is a **three-letter** geocode in uppercase. The Internet database of IATA airport codes contains approximately 10,000 entries. The maximum combinatorial combination of 26 English characters in three positions (Permutations with Repetition) 17576. The database will store a pairwise combination of IATA codes without repeating. If the combination {А, В} is present in the database, it will be impossible to add the combination {В, А}, they are equivalent (Combinations without repetition). The database will contain a maximum of 154449100 or for a base of 10000 codes 49995000 records. Each record will contain two fields of three ASCII characters and one double field = 112 bites = 14 byte. Maximum database size can be ~ 4.027 GB or database size for 10000 actually existing IATA codes ~ 0.652 GB (I'm talking about pure data, there are also overhead costs of the database data structs as a cluster index). 
+### Architecture of the project
+This project is designed using the [hexagonal architecture style](https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)). 
+<br><img src="https://raw.githubusercontent.com/ReyStar/Orange.ApiTokenValidation/master/doc/Hexagonal.png" alt="Hexagonal.png" width="450"/><br>
+The hexagonal architecture, or ports and adapters architecture, is an architectural pattern used in software design. It aims at creating loosely coupled application components that can be easily connected to their software environment by means of ports and adapters. This makes components exchangeable at any level and facilitates test automation. The hexagonal architecture directs all dependencies to the center of the external infrastructure adapters in the domain layer. More information in [other my pet project](https://github.com/ReyStar/Orange.ApiTokenValidation).
+
