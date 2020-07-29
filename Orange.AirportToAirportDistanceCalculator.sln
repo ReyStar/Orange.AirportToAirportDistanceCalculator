@@ -1,0 +1,80 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30309.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orange.AirportToAirportDistanceCalculator.API", "src\Orange.AirportToAirportDistanceCalculator.API\Orange.AirportToAirportDistanceCalculator.API.csproj", "{D454B994-6564-40AC-A98E-A53103B77EE0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orange.AirportToAirportDistanceCalculator.Repository", "src\Orange.AirportToAirportDistanceCalculator.Repository\Orange.AirportToAirportDistanceCalculator.Repository.csproj", "{62196713-FAA8-41DF-B914-FF0AED1431A7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orange.AirportToAirportDistanceCalculator.Domain", "src\Orange.AirportToAirportDistanceCalculator.Domain\Orange.AirportToAirportDistanceCalculator.Domain.csproj", "{9E31BD2B-7BB2-4E48-9449-593ADCE027E3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orange.AirportToAirportDistanceCalculator.Application", "src\Orange.AirportToAirportDistanceCalculator.Application\Orange.AirportToAirportDistanceCalculator.Application.csproj", "{B5C3EFE2-EA73-469C-A041-4D34A0F53F07}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orange.AirportToAirportDistanceCalculator.Shell", "src\Orange.AirportToAirportDistanceCalculator.Shell\Orange.AirportToAirportDistanceCalculator.Shell.csproj", "{944A397A-2586-42BE-B0BF-37326A6B1ECB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orange.AirportToAirportDistanceCalculator.Application.Tests", "tests\Orange.AirportToAirportDistanceCalculator.Application.Tests\Orange.AirportToAirportDistanceCalculator.Application.Tests.csproj", "{22565B30-8FF1-4B4C-84F2-ED5C8D26E0BE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{AB87E632-E1D4-4D05-9F24-94DE87786DB1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orange.AirportToAirportDistanceCalculator.Domain.Tests", "tests\Orange.AirportToAirportDistanceCalculator.Domain.Tests\Orange.AirportToAirportDistanceCalculator.Domain.Tests.csproj", "{CC95E265-06F0-432D-9DCA-8D9C1295558B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orange.AirportToAirportDistanceCalculator.Common", "src\Orange.AirportToAirportDistanceCalculator.Common\Orange.AirportToAirportDistanceCalculator.Common.csproj", "{4DFAC4E6-4698-430F-B222-1C67CA8C6358}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orange.AirportToAirportDistanceCalculator.Repository.Tests", "tests\Orange.AirportToAirportDistanceCalculator.Repository.Tests\Orange.AirportToAirportDistanceCalculator.Repository.Tests.csproj", "{0D1BD41F-5BE1-4450-A4F0-DA460537A330}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D454B994-6564-40AC-A98E-A53103B77EE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D454B994-6564-40AC-A98E-A53103B77EE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D454B994-6564-40AC-A98E-A53103B77EE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D454B994-6564-40AC-A98E-A53103B77EE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62196713-FAA8-41DF-B914-FF0AED1431A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62196713-FAA8-41DF-B914-FF0AED1431A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62196713-FAA8-41DF-B914-FF0AED1431A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62196713-FAA8-41DF-B914-FF0AED1431A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E31BD2B-7BB2-4E48-9449-593ADCE027E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E31BD2B-7BB2-4E48-9449-593ADCE027E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E31BD2B-7BB2-4E48-9449-593ADCE027E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E31BD2B-7BB2-4E48-9449-593ADCE027E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5C3EFE2-EA73-469C-A041-4D34A0F53F07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5C3EFE2-EA73-469C-A041-4D34A0F53F07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5C3EFE2-EA73-469C-A041-4D34A0F53F07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5C3EFE2-EA73-469C-A041-4D34A0F53F07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{944A397A-2586-42BE-B0BF-37326A6B1ECB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{944A397A-2586-42BE-B0BF-37326A6B1ECB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{944A397A-2586-42BE-B0BF-37326A6B1ECB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{944A397A-2586-42BE-B0BF-37326A6B1ECB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22565B30-8FF1-4B4C-84F2-ED5C8D26E0BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22565B30-8FF1-4B4C-84F2-ED5C8D26E0BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22565B30-8FF1-4B4C-84F2-ED5C8D26E0BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22565B30-8FF1-4B4C-84F2-ED5C8D26E0BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC95E265-06F0-432D-9DCA-8D9C1295558B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC95E265-06F0-432D-9DCA-8D9C1295558B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC95E265-06F0-432D-9DCA-8D9C1295558B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC95E265-06F0-432D-9DCA-8D9C1295558B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DFAC4E6-4698-430F-B222-1C67CA8C6358}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DFAC4E6-4698-430F-B222-1C67CA8C6358}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DFAC4E6-4698-430F-B222-1C67CA8C6358}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DFAC4E6-4698-430F-B222-1C67CA8C6358}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D1BD41F-5BE1-4450-A4F0-DA460537A330}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D1BD41F-5BE1-4450-A4F0-DA460537A330}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D1BD41F-5BE1-4450-A4F0-DA460537A330}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D1BD41F-5BE1-4450-A4F0-DA460537A330}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{22565B30-8FF1-4B4C-84F2-ED5C8D26E0BE} = {AB87E632-E1D4-4D05-9F24-94DE87786DB1}
+		{CC95E265-06F0-432D-9DCA-8D9C1295558B} = {AB87E632-E1D4-4D05-9F24-94DE87786DB1}
+		{0D1BD41F-5BE1-4450-A4F0-DA460537A330} = {AB87E632-E1D4-4D05-9F24-94DE87786DB1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3937B0E8-FABA-40A8-8104-8B7E44B86008}
+	EndGlobalSection
+EndGlobal
