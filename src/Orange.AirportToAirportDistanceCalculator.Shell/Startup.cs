@@ -8,7 +8,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Options;
 using Orange.AirportToAirportDistanceCalculator.API;
 using Orange.AirportToAirportDistanceCalculator.Application;
 using Orange.AirportToAirportDistanceCalculator.Domain;
@@ -57,18 +56,9 @@ namespace Orange.AirportToAirportDistanceCalculator.Shell
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseOpenApi();
-                app.UseSwaggerUi3();
-
-                app.UseDeveloperExceptionPage();
-            }
-
             app.UseHeaderPropagation();
-
             app.UseMetrics();
-
+          
             app.UseHealthChecks("/health", new HealthCheckOptions
             {
                 ResultStatusCodes =
@@ -85,8 +75,17 @@ namespace Orange.AirportToAirportDistanceCalculator.Shell
                 ForwardedHeaders = ForwardedHeaders.XForwardedFor 
                                    | ForwardedHeaders.XForwardedProto
             });
-            
+
             app.UseHttpsRedirection();
+            
+            if (env.IsDevelopment())
+            {
+                app.UseOpenApi();
+                app.UseSwaggerUi3();
+
+                app.UseDeveloperExceptionPage();
+            }
+           
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
