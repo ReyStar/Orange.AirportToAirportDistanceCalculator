@@ -1,0 +1,40 @@
+# ASP.NET Core
+# Build and test ASP.NET Core projects targeting .NET Core.
+# Add steps that run tests, create a NuGet package, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Development'
+
+steps:
+- task: UseDotNet@2
+  displayName: 'Use dotnet sdk 3.x'
+  inputs:
+    version: 3.x
+    includePreviewVersions: true
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'restore'
+    projects: '**/src/Orange.AirportToAirportDistanceCalculator.Shell/*.csproj'
+    feedsToUse: 'select'
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: '**/src/Orange.AirportToAirportDistanceCalculator.Shell/*.csproj'
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    projects: '**/tests/Orange.AirportToAirportDistanceCalculator.Application.Tests/*.csproj'
+    testRunTitle: 'Unit'
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    projects: '**/tests/Orange.AirportToAirportDistanceCalculator.Domain.Tests/*.csproj'
+    testRunTitle: 'Unit'
