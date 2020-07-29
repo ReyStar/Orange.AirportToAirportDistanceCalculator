@@ -1,6 +1,6 @@
 # Orange.AirportToAirportDistanceCalculator
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ReyStar/Orange.StatsD/blob/master/LICENSE)
-[![Build Status](https://dev.azure.com/starandrey/starandrey/_apis/build/status/ReyStar.Orange..AirportToAirportDistanceCalculator?branchName=master)](https://dev.azure.com/starandrey/starandrey/_build/latest?definitionId=2&branchName=master)
+[![Build Status](https://dev.azure.com/starandrey/starandrey/_apis/build/status/ReyStar.Orange.AirportToAirportDistanceCalculator?branchName=master)](https://dev.azure.com/starandrey/starandrey/_build/latest?definitionId=2&branchName=master)
 <br>
 Test project for providing information on distance between airports.
 
