@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Net.Http;
+using System.Threading;
+using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -8,6 +10,7 @@ using Orange.AirportToAirportDistanceCalculator.Application.Infrastructure;
 using Orange.AirportToAirportDistanceCalculator.Application.Interfaces;
 using Orange.AirportToAirportDistanceCalculator.Application.Services;
 using Orange.AirportToAirportDistanceCalculator.Domain.Interfaces;
+using Orange.AirportToAirportDistanceCalculator.Domain.Models;
 using Polly;
 
 namespace Orange.AirportToAirportDistanceCalculator.Application
@@ -45,9 +48,18 @@ namespace Orange.AirportToAirportDistanceCalculator.Application
                     .AddTransientHttpErrorPolicy(p => p.WaitAndRetryAsync(cteleportClientConfig.RetryCount, _ => cteleportClientConfig.RetryTimeout))
                     .AddTransientHttpErrorPolicy(p => p.CircuitBreakerAsync(cteleportClientConfig.CircuitBreakerFailTryCount, cteleportClientConfig.CircuitTimeout));
 
-            if (configuration.GetValue<CacheDataType>(nameof(CacheDataType), CacheDataType.DataBase) == CacheDataType.DataBase)
+            
+            var cacheDataType = configuration.GetValue<CacheDataType>(nameof(CacheDataType), CacheDataType.DataBase);
+
+            // Decorator registration positions make sense
+            // A later registered decorator is called earlier.
+            if ((CacheDataType.DataBase & cacheDataType) == CacheDataType.DataBase)
             {
                 services.Decorate<IDistanceCalculatorService, DistanceCalculatorDataBaseCacheService>();
+            }
+            if ((CacheDataType.Memory & cacheDataType) == CacheDataType.Memory)
+            {
+                services.Decorate<IDistanceCalculatorService, DistanceCalculatorMemoryCacheService>();
             }
 
             return services;

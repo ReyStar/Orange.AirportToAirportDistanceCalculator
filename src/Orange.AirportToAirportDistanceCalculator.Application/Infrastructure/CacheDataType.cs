@@ -1,12 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Orange.AirportToAirportDistanceCalculator.Application.Infrastructure
 {
+    [Flags]
     enum CacheDataType
     {
         None = 0,
-        DataBase = 1
+        Memory = 1,
+        DataBase = 2,
+        All = Memory | DataBase
     }
 }

@@ -3,10 +3,12 @@ using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 using Orange.AirportToAirportDistanceCalculator.API;
 using Orange.AirportToAirportDistanceCalculator.Application;
 using Orange.AirportToAirportDistanceCalculator.Domain;
@@ -44,10 +46,9 @@ namespace Orange.AirportToAirportDistanceCalculator.Shell
             services.RegisterMetrics(Configuration);
             services.AddHeaderPropagation();
 
-            //For use need auth schema
-            services.AddAuthentication(options => { });
+            services.Configure<MemoryCacheOptions>(Configuration.GetSection(nameof(MemoryCacheOptions)));
+            services.AddMemoryCache();
 
-           
             services.AddHealthChecks().AddCheck<HealthCheck>("base_health_check");
 
             services.AddSingleton<IStartupFilter, StartupValidation>();

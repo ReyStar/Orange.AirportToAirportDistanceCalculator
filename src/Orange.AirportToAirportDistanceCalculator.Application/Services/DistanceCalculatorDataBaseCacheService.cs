@@ -10,7 +10,7 @@ using Orange.AirportToAirportDistanceCalculator.Domain.Models;
 namespace Orange.AirportToAirportDistanceCalculator.Application.Services
 {
     /// <summary>
-    /// Caching decorator for the DistanceCalculatorService
+    /// DataBase caching decorator for the DistanceCalculatorService
     /// </summary>
     class DistanceCalculatorDataBaseCacheService : IDistanceCalculatorService
     {
