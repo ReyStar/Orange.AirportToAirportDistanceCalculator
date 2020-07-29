@@ -2,6 +2,7 @@
 using Orange.AirportToAirportDistanceCalculator.Domain.Interfaces;
 using Orange.AirportToAirportDistanceCalculator.Domain.Models;
 using System;
+using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -14,11 +15,14 @@ namespace Orange.AirportToAirportDistanceCalculator.Application.Services
     {
         private readonly IDistanceCalculatorService _calculatorService;
         private readonly IMemoryCache _memoryCache;
+        private readonly MemoryCacheEntryOptions _memoryCacheGeoDistanceEntryOptions;
 
         public DistanceCalculatorMemoryCacheService(IDistanceCalculatorService calculatorService, IMemoryCache memoryCache)
         {
             _calculatorService = calculatorService;
             _memoryCache = memoryCache;
+
+            _memoryCacheGeoDistanceEntryOptions = new MemoryCacheEntryOptions() { Size = Marshal.SizeOf<GeoDistance>()  };
         }
 
         public async Task<GeoDistance> CalculateDistanceAsync(string departureIATACode, string destinationIATACode, CancellationToken cancellationToken = default)
@@ -32,7 +36,7 @@ namespace Orange.AirportToAirportDistanceCalculator.Application.Services
 
             geoDistance = await _calculatorService.CalculateDistanceAsync(departureIATACode, destinationIATACode, cancellationToken);
 
-            _memoryCache.Set(naturalId, geoDistance);
+            _memoryCache.Set(naturalId, geoDistance, _memoryCacheGeoDistanceEntryOptions);
 
             return geoDistance;
         }
