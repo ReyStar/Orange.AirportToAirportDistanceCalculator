@@ -3,25 +3,62 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30309.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orange.AirportToAirportDistanceCalculator.API", "src\Orange.AirportToAirportDistanceCalculator.API\Orange.AirportToAirportDistanceCalculator.API.csproj", "{D454B994-6564-40AC-A98E-A53103B77EE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DistanceCalculator.API", "src\Services\DistanceCalculator\DistanceCalculator.API\DistanceCalculator.API.csproj", "{D454B994-6564-40AC-A98E-A53103B77EE0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orange.AirportToAirportDistanceCalculator.Repository", "src\Orange.AirportToAirportDistanceCalculator.Repository\Orange.AirportToAirportDistanceCalculator.Repository.csproj", "{62196713-FAA8-41DF-B914-FF0AED1431A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DistanceCalculator.Repository", "src\Services\DistanceCalculator\DistanceCalculator.Repository\DistanceCalculator.Repository.csproj", "{62196713-FAA8-41DF-B914-FF0AED1431A7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orange.AirportToAirportDistanceCalculator.Domain", "src\Orange.AirportToAirportDistanceCalculator.Domain\Orange.AirportToAirportDistanceCalculator.Domain.csproj", "{9E31BD2B-7BB2-4E48-9449-593ADCE027E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DistanceCalculator.Domain", "src\Services\DistanceCalculator\DistanceCalculator.Domain\DistanceCalculator.Domain.csproj", "{9E31BD2B-7BB2-4E48-9449-593ADCE027E3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orange.AirportToAirportDistanceCalculator.Application", "src\Orange.AirportToAirportDistanceCalculator.Application\Orange.AirportToAirportDistanceCalculator.Application.csproj", "{B5C3EFE2-EA73-469C-A041-4D34A0F53F07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DistanceCalculator.Application", "src\Services\DistanceCalculator\DistanceCalculator.Application\DistanceCalculator.Application.csproj", "{B5C3EFE2-EA73-469C-A041-4D34A0F53F07}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orange.AirportToAirportDistanceCalculator.Shell", "src\Orange.AirportToAirportDistanceCalculator.Shell\Orange.AirportToAirportDistanceCalculator.Shell.csproj", "{944A397A-2586-42BE-B0BF-37326A6B1ECB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DistanceCalculator.Shell", "src\Services\DistanceCalculator\DistanceCalculator.Shell\DistanceCalculator.Shell.csproj", "{944A397A-2586-42BE-B0BF-37326A6B1ECB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orange.AirportToAirportDistanceCalculator.Application.Tests", "tests\Orange.AirportToAirportDistanceCalculator.Application.Tests\Orange.AirportToAirportDistanceCalculator.Application.Tests.csproj", "{22565B30-8FF1-4B4C-84F2-ED5C8D26E0BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DistanceCalculator.Application.Tests", "tests\Services\DistanceCalculator\DistanceCalculator.Application.Tests\DistanceCalculator.Application.Tests.csproj", "{22565B30-8FF1-4B4C-84F2-ED5C8D26E0BE}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{AB87E632-E1D4-4D05-9F24-94DE87786DB1}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{AB87E632-E1D4-4D05-9F24-94DE87786DB1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orange.AirportToAirportDistanceCalculator.Domain.Tests", "tests\Orange.AirportToAirportDistanceCalculator.Domain.Tests\Orange.AirportToAirportDistanceCalculator.Domain.Tests.csproj", "{CC95E265-06F0-432D-9DCA-8D9C1295558B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DistanceCalculator.Domain.Tests", "tests\Services\DistanceCalculator\DistanceCalculator.Domain.Tests\DistanceCalculator.Domain.Tests.csproj", "{CC95E265-06F0-432D-9DCA-8D9C1295558B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orange.AirportToAirportDistanceCalculator.Common", "src\Orange.AirportToAirportDistanceCalculator.Common\Orange.AirportToAirportDistanceCalculator.Common.csproj", "{4DFAC4E6-4698-430F-B222-1C67CA8C6358}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DistanceCalculator.Common", "src\Services\DistanceCalculator\DistanceCalculator.Common\DistanceCalculator.Common.csproj", "{4DFAC4E6-4698-430F-B222-1C67CA8C6358}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orange.AirportToAirportDistanceCalculator.Repository.Tests", "tests\Orange.AirportToAirportDistanceCalculator.Repository.Tests\Orange.AirportToAirportDistanceCalculator.Repository.Tests.csproj", "{0D1BD41F-5BE1-4450-A4F0-DA460537A330}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DistanceCalculator.Repository.Tests", "tests\Services\DistanceCalculator\DistanceCalculator.Repository.Tests\DistanceCalculator.Repository.Tests.csproj", "{0D1BD41F-5BE1-4450-A4F0-DA460537A330}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FCB03B57-F506-4F07-AFAF-86B9BDC8D449}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{5B2D17A3-547A-4D09-B63E-B07DB936CE99}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3C04661A-F533-42DA-A00F-96C10D6B4CA3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{8D56BC7F-3DFF-43B0-8103-1F1312282020}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DistanceCalculator", "DistanceCalculator", "{E886280E-119C-4E4D-927B-F2B5F3FA836A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AirportInfo", "AirportInfo", "{15855F5E-D226-4C28-A2EA-7022EFF280C5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirportInfo.Shell", "src\Services\AirportInfo\AirportInfo.Shell\AirportInfo.Shell.csproj", "{6D852DF5-5FF3-4D4E-9A43-15218B322029}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirportInfo.API", "src\Services\AirportInfo\AirportInfo.API\AirportInfo.API.csproj", "{1D8C55AC-8AD1-4174-ABCA-0C3C8E2AEB7A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirportInfo.Application", "src\Services\AirportInfo\AirportInfo.Application\AirportInfo.Application.csproj", "{A9904985-E8D2-4F91-BA7A-4C7D6DB765EC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirportInfo.Common", "src\Services\AirportInfo\AirportInfo.Common\AirportInfo.Common.csproj", "{92ABE48D-9189-4732-9522-9D2669CBB64D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirportInfo.Domain", "src\Services\AirportInfo\AirportInfo.Domain\AirportInfo.Domain.csproj", "{4E497C3F-5DE7-4D62-95C7-0719BE53EBF4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirportInfo.Repository", "src\Services\AirportInfo\AirportInfo.Repository\AirportInfo.Repository.csproj", "{84FA89CF-3FDE-4864-93EF-9587136461C8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DistanceCalculator", "DistanceCalculator", "{D982BA31-676F-4DEB-9249-675AA91D0FEB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateways", "ApiGateways", "{ACEB03D8-C632-406F-809F-5FF22AD56A73}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Envoy", "Envoy", "{C3239E3E-6255-4BBA-AE9C-56895EA507A5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "config", "config", "{D40825AA-5342-41E1-B6C2-7E223CBBA7BE}"
+	ProjectSection(SolutionItems) = preProject
+		src\ApiGateways\Envoy\config\envoy.yaml = src\ApiGateways\Envoy\config\envoy.yaml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApps", "WebApps", "{A2358E82-BC67-41DF-96F4-23BA5A2D1F6A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,14 +102,62 @@ Global
 		{0D1BD41F-5BE1-4450-A4F0-DA460537A330}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D1BD41F-5BE1-4450-A4F0-DA460537A330}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D1BD41F-5BE1-4450-A4F0-DA460537A330}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B2D17A3-547A-4D09-B63E-B07DB936CE99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B2D17A3-547A-4D09-B63E-B07DB936CE99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B2D17A3-547A-4D09-B63E-B07DB936CE99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B2D17A3-547A-4D09-B63E-B07DB936CE99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D852DF5-5FF3-4D4E-9A43-15218B322029}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D852DF5-5FF3-4D4E-9A43-15218B322029}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D852DF5-5FF3-4D4E-9A43-15218B322029}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D852DF5-5FF3-4D4E-9A43-15218B322029}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D8C55AC-8AD1-4174-ABCA-0C3C8E2AEB7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D8C55AC-8AD1-4174-ABCA-0C3C8E2AEB7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D8C55AC-8AD1-4174-ABCA-0C3C8E2AEB7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D8C55AC-8AD1-4174-ABCA-0C3C8E2AEB7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9904985-E8D2-4F91-BA7A-4C7D6DB765EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9904985-E8D2-4F91-BA7A-4C7D6DB765EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9904985-E8D2-4F91-BA7A-4C7D6DB765EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9904985-E8D2-4F91-BA7A-4C7D6DB765EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92ABE48D-9189-4732-9522-9D2669CBB64D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92ABE48D-9189-4732-9522-9D2669CBB64D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92ABE48D-9189-4732-9522-9D2669CBB64D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92ABE48D-9189-4732-9522-9D2669CBB64D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E497C3F-5DE7-4D62-95C7-0719BE53EBF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E497C3F-5DE7-4D62-95C7-0719BE53EBF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E497C3F-5DE7-4D62-95C7-0719BE53EBF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E497C3F-5DE7-4D62-95C7-0719BE53EBF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84FA89CF-3FDE-4864-93EF-9587136461C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84FA89CF-3FDE-4864-93EF-9587136461C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84FA89CF-3FDE-4864-93EF-9587136461C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84FA89CF-3FDE-4864-93EF-9587136461C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{22565B30-8FF1-4B4C-84F2-ED5C8D26E0BE} = {AB87E632-E1D4-4D05-9F24-94DE87786DB1}
-		{CC95E265-06F0-432D-9DCA-8D9C1295558B} = {AB87E632-E1D4-4D05-9F24-94DE87786DB1}
-		{0D1BD41F-5BE1-4450-A4F0-DA460537A330} = {AB87E632-E1D4-4D05-9F24-94DE87786DB1}
+		{D454B994-6564-40AC-A98E-A53103B77EE0} = {E886280E-119C-4E4D-927B-F2B5F3FA836A}
+		{62196713-FAA8-41DF-B914-FF0AED1431A7} = {E886280E-119C-4E4D-927B-F2B5F3FA836A}
+		{9E31BD2B-7BB2-4E48-9449-593ADCE027E3} = {E886280E-119C-4E4D-927B-F2B5F3FA836A}
+		{B5C3EFE2-EA73-469C-A041-4D34A0F53F07} = {E886280E-119C-4E4D-927B-F2B5F3FA836A}
+		{944A397A-2586-42BE-B0BF-37326A6B1ECB} = {E886280E-119C-4E4D-927B-F2B5F3FA836A}
+		{22565B30-8FF1-4B4C-84F2-ED5C8D26E0BE} = {D982BA31-676F-4DEB-9249-675AA91D0FEB}
+		{CC95E265-06F0-432D-9DCA-8D9C1295558B} = {D982BA31-676F-4DEB-9249-675AA91D0FEB}
+		{4DFAC4E6-4698-430F-B222-1C67CA8C6358} = {E886280E-119C-4E4D-927B-F2B5F3FA836A}
+		{0D1BD41F-5BE1-4450-A4F0-DA460537A330} = {D982BA31-676F-4DEB-9249-675AA91D0FEB}
+		{8D56BC7F-3DFF-43B0-8103-1F1312282020} = {3C04661A-F533-42DA-A00F-96C10D6B4CA3}
+		{E886280E-119C-4E4D-927B-F2B5F3FA836A} = {8D56BC7F-3DFF-43B0-8103-1F1312282020}
+		{15855F5E-D226-4C28-A2EA-7022EFF280C5} = {8D56BC7F-3DFF-43B0-8103-1F1312282020}
+		{6D852DF5-5FF3-4D4E-9A43-15218B322029} = {15855F5E-D226-4C28-A2EA-7022EFF280C5}
+		{1D8C55AC-8AD1-4174-ABCA-0C3C8E2AEB7A} = {15855F5E-D226-4C28-A2EA-7022EFF280C5}
+		{A9904985-E8D2-4F91-BA7A-4C7D6DB765EC} = {15855F5E-D226-4C28-A2EA-7022EFF280C5}
+		{92ABE48D-9189-4732-9522-9D2669CBB64D} = {15855F5E-D226-4C28-A2EA-7022EFF280C5}
+		{4E497C3F-5DE7-4D62-95C7-0719BE53EBF4} = {15855F5E-D226-4C28-A2EA-7022EFF280C5}
+		{84FA89CF-3FDE-4864-93EF-9587136461C8} = {15855F5E-D226-4C28-A2EA-7022EFF280C5}
+		{D982BA31-676F-4DEB-9249-675AA91D0FEB} = {AB87E632-E1D4-4D05-9F24-94DE87786DB1}
+		{ACEB03D8-C632-406F-809F-5FF22AD56A73} = {3C04661A-F533-42DA-A00F-96C10D6B4CA3}
+		{C3239E3E-6255-4BBA-AE9C-56895EA507A5} = {ACEB03D8-C632-406F-809F-5FF22AD56A73}
+		{D40825AA-5342-41E1-B6C2-7E223CBBA7BE} = {C3239E3E-6255-4BBA-AE9C-56895EA507A5}
+		{A2358E82-BC67-41DF-96F4-23BA5A2D1F6A} = {3C04661A-F533-42DA-A00F-96C10D6B4CA3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3937B0E8-FABA-40A8-8104-8B7E44B86008}
