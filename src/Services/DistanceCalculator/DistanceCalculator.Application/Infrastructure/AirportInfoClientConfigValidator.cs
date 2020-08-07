@@ -3,9 +3,9 @@ using Microsoft.Extensions.Options;
 
 namespace DistanceCalculator.Application.Infrastructure
 {
-    class CteleportClientConfigValidator : IValidateOptions<CteleportClientConfig>
+    class AirportInfoClientConfigValidator : IValidateOptions<AirportInfoClientConfig>
     {
-        public ValidateOptionsResult Validate(string name, CteleportClientConfig options)
+        public ValidateOptionsResult Validate(string name, AirportInfoClientConfig options)
         {
             if (options == null)
             {

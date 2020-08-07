@@ -5,9 +5,9 @@ using Refit;
 
 namespace DistanceCalculator.Application.Interfaces
 {
-    interface ICteleportClient
+    interface IAirportInfoClient
     {
         [Get("/airports/{iataCode}")]
-        Task<CteleportAirportInfo> GetAirportInfoAsync(string iataCode, CancellationToken cancellationToken);
+        Task<AirportInfo> GetAirportInfoAsync(string iataCode, CancellationToken cancellationToken);
     }
 }

@@ -58,7 +58,7 @@ namespace DistanceCalculator.Shell
         {
             app.UseHeaderPropagation();
             app.UseMetrics();
-          
+            
             app.UseHealthChecks("/health", new HealthCheckOptions
             {
                 ResultStatusCodes =

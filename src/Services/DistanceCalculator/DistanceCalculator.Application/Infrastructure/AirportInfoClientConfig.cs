@@ -2,7 +2,7 @@
 
 namespace DistanceCalculator.Application.Infrastructure
 {
-    class CteleportClientConfig
+    class AirportInfoClientConfig
     {
         public string BaseAddress { get; set; }
 

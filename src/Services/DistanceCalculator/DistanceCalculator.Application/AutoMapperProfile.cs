@@ -1,6 +1,4 @@
 ﻿using AutoMapper;
-using DistanceCalculator.Application.Models;
-using DistanceCalculator.Domain.Models;
 
 namespace DistanceCalculator.Application
 {
@@ -8,11 +6,10 @@ namespace DistanceCalculator.Application
     {
         public AutoMapperProfile()
         {
-            CreateMap<CteleportAirportInfo, AirportInformation>()
-                .ForMember(p => p.IATA, x => x.MapFrom(c => c.IATA))
-                .ForMember(p => p.Location, x => x.MapFrom(c => c.Location));
+            CreateMap<Models.AirportInfo, Domain.Models.AirportInformation>()
+                .ForMember(p => p.IATA, x => x.MapFrom(c => c.IATACode));
 
-            CreateMap<CteleportGeoCoordinate, GeoCoordinate>();
+            CreateMap<Models.GeoCoordinate, Domain.Models.GeoCoordinate>();
         }
     }
 }

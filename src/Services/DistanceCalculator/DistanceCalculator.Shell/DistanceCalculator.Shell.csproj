@@ -11,6 +11,14 @@
     <DockerfileContext>..\..\..\..</DockerfileContext>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="orange.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="orange.pfx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\DistanceCalculator.Application\DistanceCalculator.Application.csproj" />
     <ProjectReference Include="..\DistanceCalculator.API\DistanceCalculator.API.csproj" />
     <ProjectReference Include="..\DistanceCalculator.Common\DistanceCalculator.Common.csproj" />

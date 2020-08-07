@@ -9,6 +9,14 @@
     <UserSecretsId>08616c5d-31a1-4f6e-9720-8cd41eb227d6</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="orange.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="orange.pfx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\AirportInfo.Application\AirportInfo.Application.csproj" />
     <ProjectReference Include="..\AirportInfo.API\AirportInfo.API.csproj" />
     <ProjectReference Include="..\AirportInfo.Common\AirportInfo.Common.csproj" />

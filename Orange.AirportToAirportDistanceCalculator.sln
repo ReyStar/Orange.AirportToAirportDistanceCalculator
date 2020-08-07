@@ -51,11 +51,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DistanceCalculator", "Dista
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateways", "ApiGateways", "{ACEB03D8-C632-406F-809F-5FF22AD56A73}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Envoy", "Envoy", "{C3239E3E-6255-4BBA-AE9C-56895EA507A5}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nginx", "nginx", "{C3239E3E-6255-4BBA-AE9C-56895EA507A5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "config", "config", "{D40825AA-5342-41E1-B6C2-7E223CBBA7BE}"
 	ProjectSection(SolutionItems) = preProject
-		src\ApiGateways\Envoy\config\envoy.yaml = src\ApiGateways\Envoy\config\envoy.yaml
+		src\ApiGateways\nginx\config\nginx.conf = src\ApiGateways\nginx\config\nginx.conf
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApps", "WebApps", "{A2358E82-BC67-41DF-96F4-23BA5A2D1F6A}"

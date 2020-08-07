@@ -17,16 +17,16 @@ namespace DistanceCalculator.Application.Services
     /// </summary>
     class AirportInformationProviderService : IAirportInformationProviderService
     {
-        private readonly ICteleportClient _cteleportClient;
+        private readonly IAirportInfoClient _airportInfoClient;
         private readonly IMapper _mapper;
 
         /// <summary>Initializes a new instance of the <see cref="AirportInformationProviderService" /> class.</summary>
-        /// <param name="cteleportClient">The cteleport client.</param>
+        /// <param name="airportInfoClient">The cteleport client.</param>
         /// <param name="mapper">The mapper.</param>
-        public AirportInformationProviderService(ICteleportClient cteleportClient,
+        public AirportInformationProviderService(IAirportInfoClient airportInfoClient,
                                                  IMapper mapper)
         {
-            _cteleportClient = cteleportClient;
+            _airportInfoClient = airportInfoClient;
             _mapper = mapper;
         }
 
@@ -39,7 +39,7 @@ namespace DistanceCalculator.Application.Services
         {
             try
             {
-                var cteleportAirportInfo = await _cteleportClient.GetAirportInfoAsync(IATACode, cancellationToken);
+                var cteleportAirportInfo = await _airportInfoClient.GetAirportInfoAsync(IATACode, cancellationToken);
 
                 return _mapper.Map<AirportInformation>(cteleportAirportInfo);
             }
