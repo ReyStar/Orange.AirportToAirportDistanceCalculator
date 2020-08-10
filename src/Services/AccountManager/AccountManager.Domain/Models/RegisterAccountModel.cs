@@ -1,0 +1,13 @@
+﻿namespace AccountManager.Domain.Models
+{
+    public class RegisterAccountModel
+    {
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
+
+        public string Username { get; set; }
+
+        public string Password { get; set; }
+    }
+}

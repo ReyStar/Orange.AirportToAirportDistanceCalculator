@@ -10,7 +10,7 @@ namespace AirportInfo.Repository
         public DataSource(IOptions<ConnectionStrings> configuration)
         {
             EnsureArg.IsNotNull(configuration.Value, nameof(configuration.Value));
-            EnsureArg.IsLte(configuration.Value.RequiredVersion, 1, nameof(configuration.Value.RequiredVersion));
+            EnsureArg.IsLte(configuration.Value.RequiredVersion, configuration.Value.RequiredVersion, nameof(configuration.Value.RequiredVersion));
             EnsureArg.IsNotNullOrWhiteSpace(configuration.Value.DefaultConnection, nameof(configuration.Value.DefaultConnection));
 
             var connectionStrings = configuration.Value;

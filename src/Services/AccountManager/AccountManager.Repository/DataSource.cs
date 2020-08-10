@@ -1,13 +1,13 @@
 ﻿using System.Data;
-using System.Data.SQLite;
+using AccountManager.Repository.DapperConfig.Maps;
+using AccountManager.Repository.Infrastructure;
 using Dapper.Dommel.FluentMapping;
 using Dapper.FluentMap;
-using DistanceCalculator.Repository.DapperConfig.Maps;
-using DistanceCalculator.Repository.Infrastructure;
 using EnsureThat;
 using Microsoft.Extensions.Options;
+using Npgsql;
 
-namespace DistanceCalculator.Repository
+namespace AccountManager.Repository
 {
     public class DataSource: IDataSource
     {
@@ -15,8 +15,11 @@ namespace DistanceCalculator.Repository
         {
             FluentMapper.Initialize(config =>
             {
-                config.AddMap(new GeoDistanceDbModelMap());
+                config.AddMap(new AccountDbModelMap());
                 config.AddMap(new VersionInfoDbModelMap());
+                config.AddMap(new AccessTokenDbModelMap());
+                config.AddMap(new RefreshTokenDbModelMap());
+
                 config.ApplyToDommel();
             });
         }
@@ -32,6 +35,6 @@ namespace DistanceCalculator.Repository
             _configuration = configuration.Value;
         }
 
-        public IDbConnection Connection => new SQLiteConnection(_configuration.DefaultConnection);
+        public IDbConnection Connection => new NpgsqlConnection(_configuration.DefaultConnection);
     }
 }
