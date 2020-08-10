@@ -1,6 +1,6 @@
 namespace AirportInfo.API.Controllers.V1.DTO
 {
-    public struct AirportInfoResponse
+    public class AirportInfoResponse
     {
         public string Continent { get; set; }
 

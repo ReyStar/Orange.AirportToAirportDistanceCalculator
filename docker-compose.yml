@@ -12,6 +12,7 @@ services:
     volumes:
       - ./src/ApiGateways/nginx/config/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./src/ApiGateways/nginx/config/certificates/:/etc/ssl/:ro
+      - ./src/WebApps/Viator/dist:/html:ro
 
   mongo:
     image: mongo
@@ -27,6 +28,18 @@ services:
     restart: always
     ports:
       - 34081:8081
+
+  postgres:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: sqluser
+      POSTGRES_PASSWORD: sqlpassword
+      # POSTGRES_DB: account_db
+      # PG_DATA: /var/lib/postgresql/data/pgdata #data storage
+    ports:
+      - 2345:2345
+      - 5432:5432
 
   jaeger:
     image: jaegertracing/all-in-one
@@ -67,3 +80,33 @@ services:
     build:
       context: .
       dockerfile: src/Services/AirportInfo/AirportInfo.Shell/Dockerfile 
+
+  routes:
+    image: ${REGISTRY:-orange}/routes:${PLATFORM:-linux}-${TAG:-latest}
+    container_name: routes
+    ports:
+      - 8000:8000
+      - 8001:8001
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=mongodb://mongo/?keepAlive=true&minPoolSize=5&maxPoolSize=300&autoReconnect=true&socketTimeoutMS=3600&connectTimeoutMS=3600&compressors=zstd
+    depends_on:
+      - mongo
+    build:
+      context: .
+      dockerfile: src/Services/Routes/Routes.Shell/Dockerfile 
+  
+  accountmanager:
+    image: ${REGISTRY:-orange}/accountmanager:${PLATFORM:-linux}-${TAG:-latest}
+    container_name: accountmanager
+    ports:
+      - 4000:4000
+      - 4001:4001
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Password=sqlpassword;Username=sqluser;Port=5432;Host=postgres;Database=AccountManager
+    depends_on:
+      - postgres
+    build:
+      context: .
+      dockerfile: src/Services/AccountManager/AccountManager.Shell/Dockerfile 
